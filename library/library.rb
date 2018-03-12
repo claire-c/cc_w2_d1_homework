@@ -30,7 +30,7 @@ attr_reader :books
        }
 
     for book in @books
-    book_not_in_library = true if book[:title] != book_title_to_add
+      book_not_in_library = true if book[:title] != book_title_to_add
     end
 
     added_book[:title] << book_title_to_add if book_not_in_library == true
@@ -39,23 +39,14 @@ attr_reader :books
 
   end
 
- #  def add_book_to_library(book_title_to_add)
- #    added_book = {
- #    title: "",
- #    rental_details: {
- #     student_name: "",
- #     date: ""
- #      }
- #    }
- #  is_book_there = false
- #
- #    for book in @books
- #      if book[:title] == book_title_to_add
- #        is_book_there == true
- #      end
- #    end
- #    added_book[:title] == book_title_to_add
- # @books << added_book if is_book_there == true
- #  end
+  def change_book_rental_details(book_title, lendee, date_due)
+
+    amend_details = return_book_rental_details(book_title)
+
+    amend_details[:student_name] = lendee
+    amend_details[:date] = date_due
+
+    return_book_info(book_title)
+  end
 
 end

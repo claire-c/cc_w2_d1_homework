@@ -72,7 +72,19 @@ class TestLibrary < MiniTest::Test
 
     library_contents.add_book_to_library(book_title)
     assert_equal(4, @books_array.length)
+  end
 
+  def test_change_book_rental_details()
+    library_contents = Library.new(@books_array)
+    book_info = {
+    title: "Crash",
+    rental_details: {
+     student_name: "Adam",
+     date: "12/03/2018"
+    }
+  }
+    result = library_contents.change_book_rental_details("Crash", "Adam", "12/03/2018")
+    assert_equal(book_info, result)
   end
 
 end
