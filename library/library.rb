@@ -10,7 +10,6 @@ attr_reader :books
     for book in @books
       return book if book[:title] == book_title
     end
-    #return nil
   end
 
   def return_book_rental_details(book_title)
